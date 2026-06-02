@@ -33,6 +33,9 @@ app.use("/uploads", express.static("uploads"));
 // DB
 DBconnection();
 
+
+console.log(process.env.ATLAS_URI);
+
 // PORT
 const PORT = process.env.PORT || 8000;
 
