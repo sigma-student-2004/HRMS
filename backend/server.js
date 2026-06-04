@@ -21,7 +21,7 @@ const app = express();
 // ✅ CORS FIX (important for frontend)
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin:  "https://hrms-one-omega.vercel.app",
     credentials: true,
   })
 );
