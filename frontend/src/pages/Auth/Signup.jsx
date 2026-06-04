@@ -66,7 +66,7 @@ const Signup = () => {
       setSuccess("");
 
       const res = await API.post(
-        "http://localhost:8000/auth/signup",
+        "/auth/signup",
         form
       );
       localStorage.setItem("user", JSON.stringify(res.data.user));
@@ -97,9 +97,9 @@ const Signup = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900 px-4">
-      
+
       <div className="w-full max-w-md backdrop-blur-lg bg-white/10 border border-white/30 shadow-2xl rounded-3xl p-6 sm:p-8">
-        
+
         <h2 className="text-3xl font-bold text-center text-white mb-6">
           Create Account ✨
         </h2>
