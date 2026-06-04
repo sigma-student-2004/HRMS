@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API from "../../api";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -64,7 +65,7 @@ const Signup = () => {
       setError("");
       setSuccess("");
 
-      const res = await axios.post(
+      const res = await API.post(
         "http://localhost:8000/auth/signup",
         form
       );
