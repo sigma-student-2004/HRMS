@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react";
 import axios from "axios";
+import API from "../../api.js";
 
 const Login = () => {
    const navigate = useNavigate();
@@ -65,8 +66,8 @@ const Login = () => {
       setLoading(true);
       setError("");
 
-      const res = await axios.post(
-        "http://localhost:8000/auth/login",
+      const res = await API.post(
+        "/auth/login",
         form
       );
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import API from "../api.js";
 
 const LeaveWidget = () => {
   const [leaves, setLeaves] = useState([]);
@@ -10,8 +11,7 @@ const LeaveWidget = () => {
     try {
       setLoading(true);
 
-      const res = await axios.get(
-        "http://localhost:8000/leaves"
+      const res = await API.get("/leaves"
       );
 
       setLeaves(res.data);
@@ -29,8 +29,8 @@ const LeaveWidget = () => {
   // ✅ Update status
   const handleStatus = async (id, status) => {
     try {
-      await axios.put(
-        `http://localhost:8000/leaves/${id}`,
+      await API.put(
+        `/leaves/${id}`,
         { status }
       );
 

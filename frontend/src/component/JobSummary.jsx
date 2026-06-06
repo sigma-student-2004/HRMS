@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Briefcase, MapPin, Clock } from "lucide-react";
+import API from "../api.js";
 
 const JobSummary = () => {
   const [jobs, setJobs] = useState([]);
@@ -9,7 +10,7 @@ const JobSummary = () => {
   // ✅ Fetch jobs from backend
   const fetchJobs = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/jobs");
+      const res = await API.get("/jobs");
       setJobs(res.data);
     } catch (err) {
       console.log("Error fetching jobs", err);

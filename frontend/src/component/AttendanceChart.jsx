@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import API from "../api.js";
 
 const AttendanceChart = () => {
   const [attendance, setAttendance] = useState([
@@ -12,7 +13,7 @@ const AttendanceChart = () => {
   // ✅ Fetch Attendance Data
   const fetchAttendance = async () => {
     try {
-      const res = await axios.get("http://localhost:8000/attendance");
+      const res = await API.get("/attendance");
 
       const records = res.data || [];
 

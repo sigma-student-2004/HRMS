@@ -26,7 +26,7 @@ const LeaveManagement = () => {
     try {
       setLoading(true);
 
-      const res = await API.get("http://localhost:8000/leaves");
+      const res = await API.get("/leaves");
 
       setLeaves(res.data);
     } catch (err) {
@@ -47,7 +47,7 @@ const LeaveManagement = () => {
     }
 
     try {
-      await API.post("http://localhost:8000/leaves", form);
+      await API.post("/leaves", form);
 
       fetchLeaves();
 
@@ -67,7 +67,7 @@ const LeaveManagement = () => {
   // ✅ Update Status
   const updateStatus = async (id, status) => {
     try {
-      await axios.put(`http://localhost:8000/leaves/${id}`, {
+      await API.put(`/leaves/${id}`, {
         status,
       });
 

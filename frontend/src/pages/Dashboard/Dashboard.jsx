@@ -24,7 +24,7 @@ const Dashboard = () => {
 
   const fetchData = async () => {
     try {
-      const res = await API.get("http://localhost:8000/dashboard");
+      const res = await API.get("/dashboard");
       setStats(res.data.stats);
       setActivities(res.data.activities);
       setAttendance(res.data.attendance);
@@ -35,7 +35,7 @@ const Dashboard = () => {
 
   const fetchJobs = async () => {
     try {
-      const res = await API.get("http://localhost:8000/jobs");
+      const res = await API.get("/jobs");
       setJobs(res.data);
     } catch (err) {
       console.log("Using default jobs");

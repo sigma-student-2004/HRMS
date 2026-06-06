@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API from "../../api.js";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -64,10 +65,10 @@ const Signup = () => {
       setError("");
       setSuccess("");
 
-      const res = await axios.post(
-        "http://localhost:8000/auth/signup",
-        form
-      );
+      const res = await API.post("/auth/signup",
+         form);
+
+
       localStorage.setItem("user", JSON.stringify(res.data.user));
 
       setSuccess("Signup successful! Redirecting to login...");
